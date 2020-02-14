@@ -1,7 +1,7 @@
-%% Copyright 2016 Christophe Roger
+%% Copyright 2019 Debdipta Biswas
 %
 % Author: 
-% Christophe Roger (Darwiin)
+% Debdipta
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3c
@@ -13,13 +13,13 @@
 %
 % This work has the LPPL maintenance status `maintained'.
 % 
-% The Current Maintainer of this work is M. C. Roger.
+% The Current Maintainer of this work is Debdipta Biswas
 %
 % This work consists of the files awesome-source-cv.cls 
 
 \ProvidesClass{documentMETADATA}[2018/07/19  v1.9.2 'YAAC: Another Awesome CV' Class]
 
-\LoadClass[letterpaper]{article}
+\LoadClass[A4]{article}
 
 \newif\if@showLinks   \@showLinksfalse
 
@@ -62,7 +62,7 @@
 \RequirePackage{url,parskip} 	    % other packages for formatting
 \RequirePackage[usenames,dvipsnames]{xcolor}
 \RequirePackage{fullpage}
-\RequirePackage[margin=1.5cm]{geometry}
+\RequirePackage[margin=1.3cm]{geometry}
 \RequirePackage{fontawesome}
 \RequirePackage{hyperref}
 \RequirePackage{titlesec}
@@ -88,11 +88,11 @@
       }
       { \definecolor{basecolor}{HTML}{e68a00} }
     }
-    { \definecolor{basecolor}{rgb}{0.2, 0.07, 0.48} }
+    { \definecolor{basecolor}{rgb}{0.08, 0.39, 1.13} }
   }
   { \definecolor{basecolor}{HTML}{b30000} }     %RED
 }
-{ \definecolor{basecolor}{rgb}{0.0, 0.62, 0.38} }
+{ \definecolor{basecolor}{rgb}{0.08, 0.39, 1.13} }
 
 \definecolor{darkGrey}{HTML}{989898}
 
@@ -130,8 +130,8 @@
 \titlespacing{\section}{0pt}{2pt}{2pt}
 
 % Configure list
-\setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=2em} 
-\setlist[itemize,2]{label=\faAngleRight, nosep, leftmargin=1.5em} 
+\setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=1em} 
+\setlist[itemize,2]{label=\faAngleRight, nosep, leftmargin=1em} 
 
 % Setup Array : new column type
 \newcolumntype{R}[1]{>{\hfill}m{#1}}
@@ -146,8 +146,8 @@
 % Define font to use according to localFont option
 \ifundef{\@local}
 {
-  %\setmainfont[BoldFont = Helvetica Neue, ItalicFont=Helvetica Neue Thin Italic ,SmallCapsFont = Helvetica Neue Light]{Helvetica Neue Thin}
-  \setmainfont{Source Sans Pro Light}[
+  \setmainfont[BoldFont = Helvetica Neue, ItalicFont=Helvetica Neue Thin Italic ,SmallCapsFont = Helvetica Neue Light]{Helvetica Neue Thin}
+  %\setmainfont{Source Sans Pro Light}[
     BoldFont = SourceSansPro-Regular, 
     ItalicFont= Source Sans Pro Light Italic]
 }
@@ -160,18 +160,18 @@
 
 %New length definition
 \newlength{\rightcolumnlength}
-\setlength{\rightcolumnlength}{14.8cm}
+\setlength{\rightcolumnlength}{16.3cm}
 
 \newlength{\leftcolumn}
-\setlength{\leftcolumn}{2.5cm}
+\setlength{\leftcolumn}{1.9cm}
 
 % Font Awesome icons aliases
-\newcommand{\mailSymbol}{\faAt}
+\newcommand{\mailSymbol}{\faEnvelope}
 \newcommand{\locationSymbol}{\faMapMarker}
 \newcommand{\infoSymbol}{\faInfo}
 \newcommand{\linkedinSymbol}{\faLinkedin}
 \newcommand{\viadeoSymbol}{\faViadeo}
-\newcommand{\mobileSymbol}{\faMobilePhone}
+\newcommand{\mobileSymbol}{\faPhone}
 \newcommand{\githubSymbol}{\faGithub}
 \newcommand{\linkSymbol}{\faLink}
 
@@ -229,7 +229,7 @@
 
 % Render author's personal website (optional)
 % Usage: \personalLink{<website-without-http://www.>}
-\newcommand*{\personalLink}[1]{\sociallink{\linkSymbol}{http://www.#1}{#1}}
+\newcommand*{\personalLink}[1]{\sociallink{\faGlobe}{http://www.#1}{#1}}
 
 
 % Render author's viadeo(optional)
@@ -279,7 +279,7 @@
     \ifundef{\@photodiameter}{
       \begin{minipage}{\linewidth}
     }{
-      \begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}
+      \begin{minipage}{\dimexpr\linewidth-\@photodiameter-3em}
     }
     \color{accentcolor}\user{\@firstname}{\@lastname}\color{black}\\
     \small{\@socialinfo}
@@ -326,7 +326,7 @@
 \newenvironment{keywords}{%
   \renewcommand{\arraystretch}{1.1}
 
-  \begin{tabular}{>{}r>{}p{13cm}} 
+  \begin{tabular}{>{}r>{}p{15.8cm}} 
 }{%
   \end{tabular}
 }
@@ -391,6 +391,7 @@
                  & \footnotesize{\foreach \n in {#7}{\cvtag{\n}}} 	\\
   }
 
+
 % Render a consultant experience in the experiences environment
 % Usage: 
 % \consultantexperience
@@ -450,7 +451,7 @@
 \newenvironment{referees}{%
 }{%
   \hfill
-  \bigskip
+  \smallskip
 }
 
 \newcommand*\referee[5]{
