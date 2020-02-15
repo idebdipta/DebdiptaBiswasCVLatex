@@ -388,7 +388,8 @@
   \textbf{#5}    & \begin{minipage}[t]{\rightcolumnlength}
   					         #6
                    \end{minipage}										\\*
-                 & \footnotesize{\foreach \n in {#7}{\cvtag{\n}}} 	\\
+                 & \footnotesize{\foreach \n in {#7}{\cvtag{\n}}}
+                 \\
   }
 
 
