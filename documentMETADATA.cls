@@ -366,6 +366,30 @@
   \textbf{#1}    & \foreach \x in {1,...,5}{{\color{accentcolor!80} \ifnumgreater{\x}{#2}{\faCircleThin}{\faCircle}}\enspace } \\
 }
 
+
+% Define the 'projects' environment
+\newenvironment{prodevs}{%
+  \begin{longtable}{l}
+}{%
+  \end{longtable}
+}
+
+% Define the 'project' entry in the 'projects' environment
+% Usage:
+% \project
+%   {<Project name>}{<dates>}
+%   {<link1> <link2>}
+%   {<Project description>}
+%   {<techno1>,<techno2>}
+\newcommand\prodev[5]{
+  \begin{minipage}[t]{\dimexpr(\linewidth) - 1.5em}
+    \textbf{\textsc{#1}} \hfill \textsc{#2}\smallskip\\
+    #3\\
+    #4\smallskip\\
+    \footnotesize{\foreach \n in {#5}{\cvtag{\n}}}\\
+  \end{minipage}
+  \\*
+}
 \newcolumntype{E}{>{\raggedright\arraybackslash}p{\rightcolumnlength}}
 
 % Define the 'experiences' environment
