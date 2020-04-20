@@ -1,21 +1,14 @@
 %% Copyright 2019 Debdipta Biswas
 %
-% Author: 
-% Debdipta
+% Author: Debdipta Biswas
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3c
 % of this license or (at your option) any later version.
-% The latest version of this license is in
-%   http://www.latex-project.org/lppl.txt
 % and version 1.3 or later is part of all distributions of LaTeX
-% version 2005/12/01 or later.
+% version 2019/12/03 or later.
 %
 % This work has the LPPL maintenance status `maintained'.
-% 
-% The Current Maintainer of this work is Debdipta Biswas
-%
-% This work consists of the files awesome-source-cv.cls 
 
 \ProvidesClass{documentMETADATA}[2018/07/19  v1.9.2 'YAAC: Another Awesome CV' Class]
 
@@ -73,11 +66,11 @@
 \RequirePackage{tikz}
 \RequirePackage[skins]{tcolorbox}
 \RequirePackage{fancyhdr}
-
+\usepackage{xcolor}
 
 \DeclareUnicodeCharacter{00E9}{\'{e}}
 % Define default accent colors
-\definecolor{basecolor}{HTML}{000066}       %BLUE
+\definecolor{basecolor}{HTML}{0a46ff}       %BLUE
 
 \ifundef{\@green} {
   \ifundef{\@red} {
