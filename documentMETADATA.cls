@@ -70,7 +70,7 @@
 
 \DeclareUnicodeCharacter{00E9}{\'{e}}
 % Define default accent colors
-\definecolor{basecolor}{HTML}{0a46ff}       %BLUE
+\definecolor{basecolor}{HTML}{0a3a99}       %BLUE
 
 \ifundef{\@green} {
   \ifundef{\@red} {
