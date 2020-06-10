@@ -218,7 +218,7 @@
 
 % Render author's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
-\newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}{http://www.linkedin.com/in/#1/fr}{linkedin.com/in/#1}}
+\newcommand*{\linkedin}[1]{\sociallink{\linkedinSymbol}{http://www.linkedin.com/in/#1}{linkedin.com/in/#1}}
 
 % Render author's personal website (optional)
 % Usage: \personalLink{<website-without-http://www.>}
@@ -408,6 +408,32 @@
                  & \footnotesize{\foreach \n in {#7}{\cvtag{\n}}}
                  \\
   }
+
+
+% Define the 'experiences' environment
+\newenvironment{academics}{%
+  \begin{longtable}{R{\leftcolumn}|E}
+}{%
+  \end{longtable}
+}
+
+% Render an experience in the experiences environment
+% Usage: 
+% \experience
+%  {<End date>}      {<Title>}{<Enterprise>}{<Country>}
+%  {<Start date}     {
+%                      <Experience description (Could be a list)>
+%                    }
+%                    {<Technology list>}
+\newcommand\academic[6]{
+  \textbf{#1}    & \textbf{#2, \textsc{#3}, #4}   								\\*
+  \textbf{#5}    & \begin{minipage}[t]{\rightcolumnlength}
+  					         #6
+                   \end{minipage}   
+                        \\
+}
+                        
+
 
 
 % Render a consultant experience in the experiences environment
